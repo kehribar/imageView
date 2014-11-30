@@ -61,6 +61,19 @@ int main(int argc, const char** argv)
 			}
 		}
 
+		#if 0
+			printf(">");
+			for(int i=0; i<frame.rows; i++)
+			{
+				printf("\r\n    ");
+				for(int j=0; j<frame.cols; j++)
+				{				
+					printf("%2X ",frame.at<uchar>(i,j));
+				}
+			}
+			printf("\r\n");
+		#endif
+
 		/* resize the image */
 		resize(frame,dst,size);
 
@@ -141,41 +154,5 @@ void sync_image(int* port)
 	}
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*---------------------------------------------------------------------------*/
 
