@@ -15,9 +15,9 @@
 using namespace cv;
 using namespace std;
 /*---------------------------------------------------------------------------*/
-#define WIDTH 48
-#define HEIGHT 32
-#define UPSAMPLE 8  
+#define WIDTH 80
+#define HEIGHT 60
+#define UPSAMPLE 4  
 /*---------------------------------------------------------------------------*/
 void sync_image(int* port);
 /*---------------------------------------------------------------------------*/
@@ -35,7 +35,7 @@ int main(int argc, const char** argv)
   Size size(WIDTH*UPSAMPLE,HEIGHT*UPSAMPLE);
   Mat frame = Mat::ones(HEIGHT,WIDTH,CV_8U);
 
-  fd = serialport_init("/dev/tty.usbserial-DAY3N9RS",230400,'n');
+  fd = serialport_init("/dev/ttyUSB0",B2000000,'n');
 
   printf("Hello!\n");
 
